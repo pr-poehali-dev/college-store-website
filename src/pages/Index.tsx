@@ -138,12 +138,6 @@ const Index = () => {
                 КАТАЛОГ
               </button>
               <button
-                onClick={() => setActiveSection('news')}
-                className={`text-sm font-medium ${activeSection === 'news' ? 'text-primary' : 'text-gray-600 hover:text-gray-900'}`}
-              >
-                НОВОСТИ
-              </button>
-              <button
                 onClick={() => setActiveSection('contacts')}
                 className={`text-sm font-medium ${activeSection === 'contacts' ? 'text-primary' : 'text-gray-600 hover:text-gray-900'}`}
               >
@@ -278,24 +272,6 @@ const Index = () => {
               В нашем магазине представлено профессиональное оборудование, которое используется 
               в образовательном процессе и доступно для приобретения.
             </p>
-          </div>
-        )}
-
-        {activeSection === 'news' && (
-          <div className="max-w-3xl">
-            <h1 className="text-3xl font-bold mb-8 text-gray-900">НОВОСТИ</h1>
-            <div className="space-y-6">
-              <Card className="p-6">
-                <h3 className="font-bold text-lg mb-2">Поступление нового оборудования</h3>
-                <p className="text-sm text-gray-500 mb-3">10 ноября 2025</p>
-                <p className="text-gray-600">В наш каталог добавлено современное лабораторное оборудование для технических специальностей.</p>
-              </Card>
-              <Card className="p-6">
-                <h3 className="font-bold text-lg mb-2">Скидки для студентов</h3>
-                <p className="text-sm text-gray-500 mb-3">5 ноября 2025</p>
-                <p className="text-gray-600">Студенты колледжа получают специальную скидку 15% на все товары при предъявлении студенческого билета.</p>
-              </Card>
-            </div>
           </div>
         )}
 
