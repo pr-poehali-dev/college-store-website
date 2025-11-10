@@ -224,7 +224,7 @@ const Index = () => {
       <main className="container mx-auto px-4 py-12">
         {activeSection === 'catalog' && (
           <>
-            <h1 className="text-3xl font-bold mb-2 text-gray-900">КАТАЛОГ</h1>
+            <h1 className="text-3xl font-bold mb-2 text-primary">КАТАЛОГ</h1>
             <p className="text-gray-600 mb-8">Лабораторное оборудование для учебных заведений</p>
             
             <Card className="mb-12 overflow-hidden">
@@ -232,31 +232,31 @@ const Index = () => {
                 <div className="p-6">
                   <div className="space-y-4">
                     <div>
-                      <h3 className="font-bold text-sm text-gray-500 mb-1">Отрасль УПК:</h3>
+                      <h3 className="font-bold text-sm text-primary/70 mb-1">Отрасль УПК:</h3>
                       <p className="text-gray-900">Транспорт</p>
                     </div>
                     <div>
-                      <h3 className="font-bold text-sm text-gray-500 mb-1">Вид (услуга/продукт):</h3>
+                      <h3 className="font-bold text-sm text-primary/70 mb-1">Вид (услуга/продукт):</h3>
                       <p className="text-gray-900">Услуга</p>
                     </div>
                     <div>
-                      <h3 className="font-bold text-sm text-gray-500 mb-1">Наименование УПК/Колледжа:</h3>
+                      <h3 className="font-bold text-sm text-primary/70 mb-1">Наименование УПК/Колледжа:</h3>
                       <p className="text-gray-900">«АвтоДоктор»/КГБ ПОУ ХДСТ</p>
                     </div>
                     <div>
-                      <h3 className="font-bold text-sm text-gray-500 mb-1">Краткое описание:</h3>
+                      <h3 className="font-bold text-sm text-primary/70 mb-1">Краткое описание:</h3>
                       <p className="text-gray-900">Компьютерная диагностика автомобиля. Техническое обслуживание. Шиномонтаж. Обслуживание тормозной системы, ходовой части, АКПП\МКПП двигателей и систем охлаждений.</p>
                     </div>
                     <div>
-                      <h3 className="font-bold text-sm text-gray-500 mb-1">Способ получения:</h3>
+                      <h3 className="font-bold text-sm text-primary/70 mb-1">Способ получения:</h3>
                       <p className="text-gray-900">Безналичная оплата.</p>
                     </div>
                     <div>
-                      <h3 className="font-bold text-sm text-gray-500 mb-1">Максимальное кол-во в предзаказ:</h3>
+                      <h3 className="font-bold text-sm text-primary/70 mb-1">Максимальное кол-во в предзаказ:</h3>
                       <p className="text-gray-900">3 автомобиля.</p>
                     </div>
                     <div>
-                      <h3 className="font-bold text-sm text-gray-500 mb-1">Примерная цена:</h3>
+                      <h3 className="font-bold text-sm text-primary/70 mb-1">Примерная цена:</h3>
                       <p className="text-gray-900">согласно смет.</p>
                     </div>
                   </div>
@@ -307,7 +307,7 @@ const Index = () => {
 
         {activeSection === 'college' && (
           <div className="max-w-3xl">
-            <h1 className="text-3xl font-bold mb-4 text-gray-900">О КОЛЛЕДЖЕ</h1>
+            <h1 className="text-3xl font-bold mb-4 text-primary">О КОЛЛЕДЖЕ</h1>
             <p className="text-gray-600 mb-4">
               Наш колледж – современное учебное заведение, оснащенное передовым лабораторным оборудованием 
               для подготовки квалифицированных специалистов.
@@ -321,7 +321,7 @@ const Index = () => {
 
         {activeSection === 'contacts' && (
           <div className="max-w-3xl">
-            <h1 className="text-3xl font-bold mb-8 text-gray-900">КОНТАКТЫ</h1>
+            <h1 className="text-3xl font-bold mb-8 text-primary">КОНТАКТЫ</h1>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <Icon name="MapPin" size={20} className="text-primary mt-1" />
