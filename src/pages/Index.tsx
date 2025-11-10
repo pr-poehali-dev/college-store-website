@@ -79,6 +79,7 @@ const products: Product[] = [
 const Index = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [activeSection, setActiveSection] = useState('catalog');
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const addToCart = (product: Product) => {
     setCart(prev => {
@@ -234,7 +235,7 @@ const Index = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {products.map(product => (
-                <Card key={product.id} className="group overflow-hidden hover:shadow-lg transition-shadow">
+                <Card key={product.id} className="group overflow-hidden hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setSelectedProduct(product)}>
                   <div className="aspect-square overflow-hidden bg-gray-50">
                     <img 
                       src={product.image} 
@@ -249,7 +250,10 @@ const Index = () => {
                       <span className="text-lg font-bold text-gray-900">{product.price.toLocaleString()} ₽</span>
                       <Button 
                         size="sm" 
-                        onClick={() => addToCart(product)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          addToCart(product);
+                        }}
                         className="gap-1"
                       >
                         <Icon name="ShoppingCart" size={16} />
@@ -330,6 +334,69 @@ const Index = () => {
           <p className="text-center text-sm text-gray-500">© 2025 Магазин колледжа. Все права защищены.</p>
         </div>
       </footer>
+
+      <Sheet open={!!selectedProduct} onOpenChange={(open) => !open && setSelectedProduct(null)}>
+        <SheetContent className="w-full sm:max-w-2xl overflow-y-auto">
+          {selectedProduct && (
+            <>
+              <SheetHeader>
+                <SheetTitle>{selectedProduct.name}</SheetTitle>
+              </SheetHeader>
+              <div className="mt-6 space-y-6">
+                <div className="aspect-square overflow-hidden bg-gray-50 rounded-lg">
+                  <img 
+                    src={selectedProduct.image} 
+                    alt={selectedProduct.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2">Описание</h3>
+                  <p className="text-gray-600">{selectedProduct.description}</p>
+                </div>
+                <div className="space-y-4">
+                  <h3 className="font-bold text-lg">Характеристики</h3>
+                  <div className="space-y-2">
+                    <div className="flex justify-between py-2 border-b">
+                      <span className="text-gray-600">Артикул</span>
+                      <span className="font-medium">LAB-{selectedProduct.id.toString().padStart(4, '0')}</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b">
+                      <span className="text-gray-600">Категория</span>
+                      <span className="font-medium">Лабораторное оборудование</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b">
+                      <span className="text-gray-600">Гарантия</span>
+                      <span className="font-medium">12 месяцев</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b">
+                      <span className="text-gray-600">Наличие</span>
+                      <span className="font-medium text-green-600">В наличии</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="sticky bottom-0 bg-white pt-4 border-t space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600">Цена:</span>
+                    <span className="text-3xl font-bold text-primary">{selectedProduct.price.toLocaleString()} ₽</span>
+                  </div>
+                  <Button 
+                    className="w-full" 
+                    size="lg"
+                    onClick={() => {
+                      addToCart(selectedProduct);
+                      setSelectedProduct(null);
+                    }}
+                  >
+                    <Icon name="ShoppingCart" size={20} className="mr-2" />
+                    ДОБАВИТЬ В КОРЗИНУ
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
+        </SheetContent>
+      </Sheet>
     </div>
   );
 };
