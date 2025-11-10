@@ -119,10 +119,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <header className="border-b border-gray-200 sticky top-0 bg-white z-10">
+      <header className="border-b border-red-100 sticky top-0 bg-white z-10">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <div className="text-xl font-bold text-gray-900">КОЛЛЕДЖ</div>
+            <div className="text-xl font-bold text-primary">КОЛЛЕДЖ</div>
             
             <nav className="hidden md:flex items-center gap-8">
               <button
