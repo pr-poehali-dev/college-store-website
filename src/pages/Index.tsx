@@ -227,6 +227,50 @@ const Index = () => {
             <h1 className="text-3xl font-bold mb-2 text-gray-900">КАТАЛОГ</h1>
             <p className="text-gray-600 mb-8">Лабораторное оборудование для учебных заведений</p>
             
+            <Card className="mb-12 overflow-hidden">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="p-6">
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="font-bold text-sm text-gray-500 mb-1">Отрасль УПК:</h3>
+                      <p className="text-gray-900">Транспорт</p>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-sm text-gray-500 mb-1">Вид (услуга/продукт):</h3>
+                      <p className="text-gray-900">Услуга</p>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-sm text-gray-500 mb-1">Наименование УПК/Колледжа:</h3>
+                      <p className="text-gray-900">«АвтоДоктор»/КГБ ПОУ ХДСТ</p>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-sm text-gray-500 mb-1">Краткое описание:</h3>
+                      <p className="text-gray-900">Компьютерная диагностика автомобиля. Техническое обслуживание. Шиномонтаж. Обслуживание тормозной системы, ходовой части, АКПП\МКПП двигателей и систем охлаждений.</p>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-sm text-gray-500 mb-1">Способ получения:</h3>
+                      <p className="text-gray-900">Безналичная оплата.</p>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-sm text-gray-500 mb-1">Максимальное кол-во в предзаказ:</h3>
+                      <p className="text-gray-900">3 автомобиля.</p>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-sm text-gray-500 mb-1">Примерная цена:</h3>
+                      <p className="text-gray-900">согласно смет.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative h-full min-h-[300px] md:min-h-[400px]">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/97f7d147-d945-4f96-be81-726752592502/files/6d0ab044-a978-4acb-a3c1-dd8bf559e56e.jpg" 
+                    alt="АвтоДоктор"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </Card>
+            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {products.map(product => (
                 <Card key={product.id} className="group overflow-hidden hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setSelectedProduct(product)}>
